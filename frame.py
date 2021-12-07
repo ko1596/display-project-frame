@@ -21,11 +21,11 @@ def pasteImg(img, overlay, x, y):
                                 alpha_l * img[y1:y2, x1:x2, c])
 
 if sys.argv[1] == "1":
-    img = cv2.imread("01.png")
+    img = cv2.imread(WORK_DIR_PATH + "01.png")
 else:
     string = "0" + sys.argv[1] + ".png"
-    print (string)
-    img = cv2.imread(string)
+    print (WORK_DIR_PATH + string)
+    img = cv2.imread(WORK_DIR_PATH + string)
 
     if sys.argv[1] == "5":
         cv2.rectangle(img,(0,600),(768,800),(255,255,255),-1)
@@ -33,15 +33,15 @@ else:
         if len(sys.argv) == 4:
             if sys.argv[3] == "0":
                 print("left")
-                left_select_button = cv2.imread("selectTime_reduce_selected.png", -1)
-                right_select_button = cv2.imread("selectTime_add_select.png", -1)
+                left_select_button = cv2.imread(WORK_DIR_PATH + "selectTime_reduce_selected.png", -1)
+                right_select_button = cv2.imread(WORK_DIR_PATH + "selectTime_add_select.png", -1)
             elif sys.argv[3] == "1":
                 print("right")
-                left_select_button = cv2.imread("selectTime_reduce_select.png", -1)
-                right_select_button = cv2.imread("selectTime_add_selected.png", -1)
+                left_select_button = cv2.imread(WORK_DIR_PATH + "selectTime_reduce_select.png", -1)
+                right_select_button = cv2.imread(WORK_DIR_PATH + "selectTime_add_selected.png", -1)
         else:
-            left_select_button = cv2.imread("selectTime_reduce_select.png", -1)
-            right_select_button = cv2.imread("selectTime_add_select.png", -1)
+            left_select_button = cv2.imread(WORK_DIR_PATH + "selectTime_reduce_select.png", -1)
+            right_select_button = cv2.imread(WORK_DIR_PATH + "selectTime_add_select.png", -1)
 
         pasteImg(img, right_select_button, 500, 630)
         pasteImg(img, left_select_button, 150, 630)
